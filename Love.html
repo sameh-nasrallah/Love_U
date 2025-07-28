@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>بحبك يا بطايتي ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(#ffd1dc, #ff90b3);
+      font-family: 'Cairo', sans-serif;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 60px;
+      color: white;
+      margin-top: 20vh;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff69b4;
+      }
+      to {
+        text-shadow: 0 0 20px #ff1493, 0 0 30px #ff69b4;
+      }
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 24px;
+      color: #ff2b6e;
+      animation: float 4s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(1); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff1493;
+    }
+  </style>
+</head>
+<body>
+  <h1>بحبك يا نونو 🥰</h1>
+  <button onclick="showLove()">اضغط هنا لو بتحبني 😉</button>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.innerText = ['❤️','💖','😍','🥰','💕'][Math.floor(Math.random()*5)];
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 4000);
+    }
+
+    setInterval(createHeart, 300);
+
+    function showLove() {
+      alert("أنا كمان بحبك أوي أوي يا بطايتي ❤️❤️❤️");
+    }
+  </script>
+</body>
+</html>
